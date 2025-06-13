@@ -1,11 +1,13 @@
 
+"use client";
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import CloverBridgeTechLogo from '@/components/CloverBridgeTechLogo';
 import { ThemeToggle } from '@/components/ThemeToggle';
-
+import { useTheme } from "next-themes";
 const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#about-us', label: 'About Us' },
@@ -23,8 +25,9 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <Link href="#home" className="mr-6 flex items-center gap-2" prefetch={false}>
-          <CloverBridgeTechLogo className="h-7 w-7" />
-          <span className="font-bold text-xl text-foreground">CloverBridgeTech</span>
+        {<img src={`/images/cbt-${theme === 'dark' ? 'white': 'black'}.png`} style={{ width: '18rem' }}/>}
+          {/* <CloverBridgeTechLogo className="h-7 w-7" />
+          <span className="font-bold text-xl text-foreground">CloverBridgeTech</span> */}
         </Link>
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium ml-auto">
           {navLinks.map((link) => (
@@ -51,8 +54,9 @@ export default function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="bg-background">
             <Link href="#home" className="mr-6 flex items-center gap-2 mb-6" prefetch={false}>
-              <CloverBridgeTechLogo className="h-7 w-7" />
-              <span className="font-bold text-xl text-foreground">CloverBridgeTech</span>
+              {/* <CloverBridgeTechLogo className="h-7 w-7" />
+              <span className="font-bold text-xl text-foreground">CloverBridgeTech</span> */}
+              {<img src={`/images/cbt-${theme === 'dark' ? 'white': 'black'}.png`} style={{ width: '18rem' }}/>}
             </Link>
             <nav className="grid gap-4">
               {navLinks.map((link) => (

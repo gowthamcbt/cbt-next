@@ -1,8 +1,10 @@
 
+"use client";
+
 import Link from 'next/link';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import CloverBridgeTechLogo from '@/components/CloverBridgeTechLogo';
-
+import { useTheme } from "next-themes";
 const footerNavLinks = [
   { href: '#home', label: 'Home' },
   { href: '#our-values', label: 'Our Values' },
@@ -22,10 +24,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8 items-center">
           <div className="flex flex-col items-center md:items-start">
             <Link href="#home" className="flex items-center gap-2 mb-2" prefetch={false}>
-              <CloverBridgeTechLogo className="h-7 w-7" />
-              <span className="font-bold text-xl text-foreground">CloverBridgeTech</span>
+             {<img src={`/images/cbt-${theme === 'dark' ? 'white': 'black'}.png`} style={{ width: '18rem' }}/>}
             </Link>
-            <p className="text-sm text-center md:text-left text-foreground/70">Crafting digital excellence.</p>
           </div>
           
           <nav className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-x-6 gap-y-2">
