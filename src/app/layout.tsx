@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: 'CloverBridgeTech',
-  description: 'Reimagined CloverBridgeTech website',
+  description: 'CloverBridgeTech',
 };
 
 export default function RootLayout({
