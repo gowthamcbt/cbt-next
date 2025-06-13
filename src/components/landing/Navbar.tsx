@@ -21,6 +21,7 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+    const {theme} = useTheme();
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
